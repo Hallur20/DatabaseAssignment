@@ -8,4 +8,4 @@ inner join empTable on customers.salesRepEmployeeNumber = empTable.employeeNumbe
 
 q2: CREATE INDEX city ON customer(city);
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/before_indexes_ex1.png"/>
-<img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/after_indexes_ex1.png"/>
+<img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/after_indexes_ex2.png"/>
