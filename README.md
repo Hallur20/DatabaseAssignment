@@ -33,3 +33,10 @@ inner join employees on customers.salesRepEmployeeNumber = employees.employeeNum
 group by employees.officeCode;
 ```
 <h3>Using windowing</h3>
+
+<h1>Excercise 4</h1>
+
+```sql
+select displayName, title from users inner join posts on posts.OwnerUserId = users.id 
+where title like '%grounds%';
+```
