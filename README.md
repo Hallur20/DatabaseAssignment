@@ -26,7 +26,7 @@ CREATE INDEX city ON customers(city);
 <h3>Using grouping</h3>
 
 ```sql
-SELECT employees.officeCode,SUM(quantityOrdered * priceEach) AS totalPrice, max((quantityOrdered * priceEach))from orderdetails 
+SELECT employees.officeCode, SUM(quantityOrdered * priceEach) AS totalPrice, max((quantityOrdered * priceEach)) from orderdetails 
 inner join orders on orderdetails.orderNumber = orders.orderNumber
 inner join customers on orders.customerNumber = customers.customerNumber
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
