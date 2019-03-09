@@ -1,6 +1,8 @@
 # DatabaseAssignment
 
-q1: with empTable as (select employeeNumber, city as 'empCity' from employees 
+q1:
+
+with empTable as (select employeeNumber, city as 'empCity' from employees 
 inner join offices on employees.officeCode = offices.officeCode) 
 
 select customerNumber, employeeNumber, city, empCity from customers 
@@ -17,7 +19,8 @@ q3:
 
 group by:
 
-SELECT employees.officeCode,(quantityOrdered * priceEach) as totalPrice from orderdetails 
+SELECT employees.officeCode, SUM(quantityOrdered * priceEach) AS totalPrice from orderdetails 
 inner join orders on orderdetails.orderNumber = orders.orderNumber
-inner join customers on orders.customerNumber = customers.customerNumber 
-inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber group by employees.officeCode; 
+inner join customers on orders.customerNumber = customers.customerNumber
+inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
+group by employees.officeCode;
