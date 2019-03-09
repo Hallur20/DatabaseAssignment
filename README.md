@@ -33,6 +33,9 @@ inner join employees on customers.salesRepEmployeeNumber = employees.employeeNum
 group by employees.officeCode
 ```
 <h3>Using windowing</h3>
+select distinct sum(amount) over (partition by employees.officeCode) as 'total sold', officeCode, max(amount) over (partition by employees.officeCode) as 'maximum payment' from payments 
+inner join customers on payments.customerNumber = customers.customerNumber 
+inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber;
 
 <h1>Excercise 4</h1>
 
