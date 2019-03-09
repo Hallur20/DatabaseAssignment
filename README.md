@@ -61,3 +61,17 @@ inner join employees on customers.salesRepEmployeeNumber = employees.employeeNum
 select displayName, title from users inner join posts on posts.OwnerUserId = users.id 
 where title like '%grounds%';
 ```
+
+<h1>Exercise 5</h1>
+
+```sql
+CREATE FULLTEXT INDEX index_name
+ON posts(title)
+```
+
+<p>we now have to use another syntax in exercise 4 in order to use this fulltext index key:</p>
+
+```sql
+select displayName, title from users inner join posts on posts.OwnerUserId = users.id 
+where match(title) against ('grounds' IN BOOLEAN MODE)
+```
