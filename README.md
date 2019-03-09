@@ -81,4 +81,4 @@ where match(title) against ('grounds' IN BOOLEAN MODE)
 ```
 
 before <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/ex4_before.PNG"/>
-after <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/before_indexes_ex1.png"/>
+after <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/ex4_after.png"/>
