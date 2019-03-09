@@ -26,6 +26,7 @@ CREATE INDEX city ON customers(city);
 <h3>Using grouping</h3>
 
 ```sql
+/*we believe this is the correct solution where we choose amount from payments table*/
 SELECT employees.officeCode,SUM(amount) AS totalPrice, max(amount) as maxPrice from payments 
 inner join customers on payments.customerNumber = customers.customerNumber 
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
@@ -33,6 +34,7 @@ group by employees.officeCode
 ```
 
 ```sql
+/*if you disagree and you think that orderdetails should be used instead we have setup this aswell: */
 SELECT employees.officeCode,SUM(quantityOrdered * priceEach) AS totalPrice, max((quantityOrdered * priceEach)) as maxPrice from orderdetails 
 inner join orders on orderdetails.orderNumber = orders.orderNumber
 inner join customers on orders.customerNumber = customers.customerNumber
@@ -43,12 +45,14 @@ group by employees.officeCode
 <h3>Using windowing</h3>
 
 ```sql
+/*we believe this is the correct solution where we choose amount from payments table*/
 select distinct sum(amount) over (partition by employees.officeCode) as 'total sold', officeCode, max(amount) over (partition by employees.officeCode) as 'maximum payment' from payments 
 inner join customers on payments.customerNumber = customers.customerNumber 
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber;
 ```
 
 ```sql
+/*if you disagree and you think that orderdetails should be used instead we have setup this aswell: */
 SELECT distinct sum(quantityOrdered * priceEach) over (partition by employees.officeCode) as 'total sold', officeCode, max(quantityOrdered * priceEach) over (partition by employees.officeCode) as 'maximum payment' from orderdetails 
 inner join orders on orderdetails.orderNumber = orders.orderNumber
 inner join customers on orders.customerNumber = customers.customerNumber
