@@ -23,7 +23,7 @@ CREATE INDEX city ON customers(city);
 
 <h1>Excercise 3</h1>
 
-group by:
+<h3>Using grouping</h3>
 
 ```sql
 SELECT employees.officeCode, SUM(quantityOrdered * priceEach) AS totalPrice from orderdetails 
@@ -32,3 +32,4 @@ inner join customers on orders.customerNumber = customers.customerNumber
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
 group by employees.officeCode;
 ```
+<h3>Using windowing</h3>
