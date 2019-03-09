@@ -38,6 +38,11 @@ group by employees.officeCode
 select distinct sum(amount) over (partition by employees.officeCode) as 'total sold', officeCode, max(amount) over (partition by employees.officeCode) as 'maximum payment' from payments 
 inner join customers on payments.customerNumber = customers.customerNumber 
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber;
+
+SELECT distinct sum(quantityOrdered * priceEach) over (partition by employees.officeCode) as 'total sold', officeCode, max(quantityOrdered * priceEach) over (partition by employees.officeCode) as 'maximum payment' from orderdetails 
+inner join orders on orderdetails.orderNumber = orders.orderNumber
+inner join customers on orders.customerNumber = customers.customerNumber
+inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
 ```
 
 <h1>Excercise 4</h1>
