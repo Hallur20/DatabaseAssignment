@@ -1,4 +1,4 @@
-# DatabaseAssignment
+# DatabaseAssignment6
 
 <h1>Excercise 1</h1>
 
@@ -14,9 +14,11 @@ inner join empTable on customers.salesRepEmployeeNumber = empTable.employeeNumbe
 CREATE INDEX city ON customers(city);
 ```
 before
+
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/before_indexes_ex1.png"/>
 
 after
+
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/after_indexes_ex2.png"/>
 
 <h1>Excercise 3</h1>
