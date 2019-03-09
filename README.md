@@ -1,6 +1,7 @@
 # DatabaseAssignment
 
 <h1>Excercise 1</h1>
+
 ```sql
 with empTable as (select employeeNumber, city as 'empCity' from employees 
 inner join offices on employees.officeCode = offices.officeCode) 
@@ -14,9 +15,12 @@ CREATE INDEX city ON customers(city);
 ```
 before
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/before_indexes_ex1.png"/>
+
 after
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/after_indexes_ex2.png"/>
+
 <h1>Excercise 3</h1>
+
 group by:
 
 ```sql
