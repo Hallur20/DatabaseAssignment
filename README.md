@@ -75,3 +75,6 @@ ON posts(title)
 select displayName, title from users inner join posts on posts.OwnerUserId = users.id 
 where match(title) against ('grounds' IN BOOLEAN MODE)
 ```
+
+before <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/ex4_before.PNG"/>
+after <img src=""/>
