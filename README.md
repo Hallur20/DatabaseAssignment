@@ -8,6 +8,7 @@ inner join offices on employees.officeCode = offices.officeCode)
 select customerNumber, employeeNumber, city, empCity from customers 
 inner join empTable on customers.salesRepEmployeeNumber = empTable.employeeNumber where city = empCity;
 ```
+
 <h1>Excercise 2</h1> 
 
 ```sql
