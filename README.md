@@ -29,8 +29,6 @@ The costs went down from 39 to 7 when we created a index in customer table on ci
 
 <h3>Using grouping</h3>
 
-<h3>Using grouping</h3>
-
 <p>We believe this is the correct solution where we choose amount from payments table</p>
 
 ```sql
