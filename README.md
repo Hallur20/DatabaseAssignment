@@ -39,6 +39,7 @@ inner join customers on orders.customerNumber = customers.customerNumber
 inner join employees on customers.salesRepEmployeeNumber = employees.employeeNumber
 group by employees.officeCode
 ```
+
 <h3>Using windowing</h3>
 
 ```sql
