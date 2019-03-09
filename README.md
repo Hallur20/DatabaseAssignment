@@ -13,11 +13,11 @@ inner join empTable on customers.salesRepEmployeeNumber = empTable.employeeNumbe
 ```sql
 CREATE INDEX city ON customers(city);
 ```
-before
+<h3>before</h3>
 
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/before_indexes_ex1.png"/>
 
-after
+<h3>after</h3>
 
 <img src="https://github.com/Hallur20/DatabaseAssignment6/blob/master/after_indexes_ex2.png"/>
 
